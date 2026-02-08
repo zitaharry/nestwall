@@ -20,6 +20,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {ModeToggle} from "@/components/themes/mode-toggle";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -141,6 +142,7 @@ export function Navbar() {
               <Button size="sm">Get Started</Button>
             </SignUpButton>
           </SignedOut>
+          <ModeToggle />
         </div>
 
         {/* Mobile Menu */}

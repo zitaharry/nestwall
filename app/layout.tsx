@@ -4,6 +4,7 @@ import { Geist_Mono, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { SanityLive } from "@/lib/sanity/live";
 import "./globals.css";
+import { ThemeProvider } from "@/components/themes/theme-provider";
 
 // Body font - highly readable
 const inter = Inter({
@@ -101,7 +102,15 @@ export default function RootLayout({
           <a href="#main" className="skip-link">
             Skip to main content
           </a>
-          {children}
+
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
           <Toaster />
           <SanityLive />
         </body>
